@@ -1,6 +1,7 @@
 """Organization listing functionality."""
 
 from typing import List, Optional
+
 from requests.exceptions import HTTPError
 
 from .client_base import APIClientBase

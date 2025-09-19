@@ -3,11 +3,11 @@
 import pytest
 import requests_mock
 
+from ndp_ep.register_dataset_method import APIClientDatasetRegister
 from ndp_ep.register_kafka_method import APIClientKafkaRegister
 from ndp_ep.register_s3_method import APIClientS3Register
-from ndp_ep.register_url_method import APIClientURLRegister
 from ndp_ep.register_service_method import APIClientServiceRegister
-from ndp_ep.register_dataset_method import APIClientDatasetRegister
+from ndp_ep.register_url_method import APIClientURLRegister
 
 
 class TestAPIClientKafkaRegister:

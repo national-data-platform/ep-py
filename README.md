@@ -33,13 +33,6 @@ client = APIClient(
     token="your-access-token"
 )
 
-# Or with username/password
-client = APIClient(
-    base_url="https://your-api-endpoint.com",
-    username="your-username",
-    password="your-password"
-)
-
 # List organizations
 organizations = client.list_organizations()
 print(organizations)
@@ -68,7 +61,27 @@ service_data = {
     "notes": "RESTful API for user authentication"
 }
 response = client.register_service(service_data)
+
+# S3 Management Examples
+buckets = client.list_buckets()
+client.create_bucket("my-data-bucket")
+
+# Upload and download files
+with open("data.csv", "rb") as f:
+    client.upload_object("my-data-bucket", "datasets/data.csv", f)
+
+file_content = client.download_object("my-data-bucket", "datasets/data.csv")
+
+# Generate presigned URLs for secure file sharing
+upload_url = client.generate_presigned_upload_url("my-data-bucket", "new-file.txt")
+download_url = client.generate_presigned_download_url("my-data-bucket", "data.csv")
 ```
+
+### More Examples
+
+For comprehensive examples and use cases, check out our:
+- **📓 [Quick start](docs/source/tutorials/getting_started.ipynb)** 
+- **📓 [Bulk Resource Management](docs/source/tutorials/bulk_resource_management.ipynb)** 
 
 ## API Coverage
 
@@ -98,6 +111,19 @@ response = client.register_service(service_data)
 
 ### Services
 - `register_service()` - Register new services
+
+### S3 Management
+- `list_buckets()` - List all S3 buckets
+- `create_bucket()` - Create new S3 bucket
+- `get_bucket_info()` - Get S3 bucket information
+- `delete_bucket()` - Delete S3 bucket
+- `list_objects()` - List objects in S3 bucket
+- `upload_object()` - Upload object to S3 bucket
+- `download_object()` - Download object from S3 bucket
+- `delete_object()` - Delete object from S3 bucket
+- `get_object_metadata()` - Get S3 object metadata
+- `generate_presigned_upload_url()` - Generate presigned upload URL
+- `generate_presigned_download_url()` - Generate presigned download URL
 
 ### System Information
 - `get_kafka_details()` - Get Kafka connection details

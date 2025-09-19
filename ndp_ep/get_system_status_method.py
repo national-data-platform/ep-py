@@ -1,6 +1,7 @@
 """System status and metrics retrieval functionality."""
 
-from typing import Dict, Any
+from typing import Any, Dict
+
 import requests
 
 from .client_base import APIClientBase

@@ -1,6 +1,7 @@
 """Search functionality for datasets."""
 
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
+
 from requests.exceptions import HTTPError
 
 from .client_base import APIClientBase

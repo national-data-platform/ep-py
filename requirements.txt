@@ -1,2 +1,7 @@
  requests>=2.25.0
 urllib3>=1.26.0
+
+# Jupyter notebook dependencies for tutorial execution
+jupyter>=1.1.0
+ipykernel>=6.30.0
+nbconvert>=7.16.0

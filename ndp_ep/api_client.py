@@ -1,21 +1,23 @@
 """Unified API Client combining all functionality."""
 
-from .register_kafka_method import APIClientKafkaRegister
-from .register_organization_method import APIClientOrganizationRegister
-from .register_s3_method import APIClientS3Register
-from .register_url_method import APIClientURLRegister
-from .register_service_method import APIClientServiceRegister
-from .register_dataset_method import APIClientDatasetRegister
-from .list_organization_method import APIClientOrganizationList
-from .search_method import APIClientSearch
-from .update_kafka_method import APIClientKafkaUpdate
-from .update_s3_method import APIClientS3Update
-from .update_url_method import APIClientURLUpdate
-from .update_dataset_method import APIClientDatasetUpdate
 from .delete_organization_method import APIClientOrganizationDelete
 from .delete_resource_method import APIClientResourceDelete
 from .get_kafka_details_method import APIClientKafkaDetails
 from .get_system_status_method import APIClientSystemStatus
+from .list_organization_method import APIClientOrganizationList
+from .register_dataset_method import APIClientDatasetRegister
+from .register_kafka_method import APIClientKafkaRegister
+from .register_organization_method import APIClientOrganizationRegister
+from .register_s3_method import APIClientS3Register
+from .register_service_method import APIClientServiceRegister
+from .register_url_method import APIClientURLRegister
+from .s3_buckets_method import APIClientS3Buckets
+from .s3_objects_method import APIClientS3Objects
+from .search_method import APIClientSearch
+from .update_dataset_method import APIClientDatasetUpdate
+from .update_kafka_method import APIClientKafkaUpdate
+from .update_s3_method import APIClientS3Update
+from .update_url_method import APIClientURLUpdate
 
 
 class APIClient(
@@ -35,6 +37,8 @@ class APIClient(
     APIClientResourceDelete,
     APIClientKafkaDetails,
     APIClientSystemStatus,
+    APIClientS3Buckets,
+    APIClientS3Objects,
 ):
     """
     Unified API Client with comprehensive functionality.
@@ -49,6 +53,8 @@ class APIClient(
     - Resource deletion (by ID and name)
     - Search functionality (simple and advanced)
     - System information (status, metrics, Kafka details, Jupyter details)
+    - S3 buckets management (create, list, delete, get info)
+    - S3 objects management (upload, download, delete, list, metadata, presigned URLs)
     - Authentication (token-based and username/password)
 
     Example:

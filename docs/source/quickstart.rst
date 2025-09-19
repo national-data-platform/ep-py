@@ -3,6 +3,34 @@ Quick Start Guide
 
 This guide will help you get started with the ndp-ep library in just a few minutes.
 
+🎯 Recommended: Interactive Tutorial
+------------------------------------
+
+**For the best learning experience, start with our interactive tutorial:**
+
+.. raw:: html
+
+   <p>
+   <a href="https://colab.research.google.com/github/sci-ndp/ndp-ep-py/blob/main/docs/source/tutorials/getting_started.ipynb" target="_blank">
+   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+   <a href="https://mybinder.org/v2/gh/sci-ndp/ndp-ep-py/main?filepath=docs%2Fsource%2Ftutorials%2Fgetting_started.ipynb" target="_blank">
+   <img src="https://mybinder.org/badge_logo.svg" alt="Binder"/>
+   </a>
+   </p>
+
+The interactive tutorial covers:
+
+* **🔐 Secure Authentication Setup** - Learn to configure authentication safely
+* **🏢 Organization Management** - Create and manage data containers
+* **🔍 Dataset Search** - Simple and advanced search techniques
+* **📊 Resource Registration** - Register URL, S3, and Kafka resources
+* **🛡️ Error Handling** - Best practices for robust applications
+* **🎯 Complete Workflows** - End-to-end real-world examples
+
+.. note::
+   The tutorial works completely in your browser and includes live, runnable code examples with real API interactions.
+
 Basic Setup
 -----------
 
@@ -36,6 +64,9 @@ Basic Setup
           username="your-username",
           password="your-password"
       )
+
+.. tip::
+   For a step-by-step guide on secure authentication setup, see our :doc:`tutorials/getting_started` notebook or the :doc:`authentication` guide.
 
 First Steps
 -----------
@@ -100,6 +131,9 @@ Creating Your First Organization
    except ValueError as e:
        print(f"✗ Error creating organization: {e}")
 
+.. note::
+   For comprehensive organization management examples, check out the :doc:`tutorials/getting_started` notebook or the :doc:`user_guide/organizations` guide.
+
 Registering Your First Dataset
 -------------------------------
 
@@ -162,6 +196,9 @@ Kafka Topic
        print(f"✓ Kafka topic registered with ID: {result['id']}")
    except ValueError as e:
        print(f"✗ Error: {e}")
+
+.. tip::
+   The :doc:`tutorials/getting_started` notebook includes working examples of all resource types with detailed explanations.
 
 Advanced Search Example
 -----------------------
@@ -297,7 +334,18 @@ Complete Example: Data Management Workflow
 Next Steps
 ----------
 
-- Read the :doc:`authentication` guide for detailed authentication options
-- Explore the :doc:`tutorials/getting_started` interactive notebook
-- Check the :doc:`api_reference` for complete API documentation
-- Learn about advanced features in the user guides
+Now that you've seen the basics, explore more advanced features:
+
+**📓 Interactive Learning:**
+- **:doc:`tutorials/getting_started`** - Complete hands-on tutorial with live examples
+- Run in `Google Colab <https://colab.research.google.com/github/sci-ndp/ndp-ep-py/blob/main/docs/source/tutorials/getting_started.ipynb>`_ or `Binder <https://mybinder.org/v2/gh/sci-ndp/ndp-ep-py/main?filepath=docs%2Fsource%2Ftutorials%2Fgetting_started.ipynb>`_
+
+**📖 Detailed Guides:**
+- **:doc:`authentication`** - Comprehensive authentication setup and security
+- **:doc:`user_guide/organizations`** - Advanced organization management
+- **:doc:`api_reference`** - Complete API documentation with all methods
+
+**🔧 Development:**
+- Explore our `GitHub repository <https://github.com/sci-ndp/ndp-ep-py>`_
+- Check out the test suite for more usage examples
+- Contribute to the project
