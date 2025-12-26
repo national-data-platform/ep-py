@@ -2,6 +2,7 @@
 
 from .delete_organization_method import APIClientOrganizationDelete
 from .delete_resource_method import APIClientResourceDelete
+from .get_dspaces_details_method import APIClientDSpacesDetails
 from .get_kafka_details_method import APIClientKafkaDetails
 from .get_system_status_method import APIClientSystemStatus
 from .list_organization_method import APIClientOrganizationList
@@ -36,6 +37,7 @@ class APIClient(
     APIClientOrganizationDelete,
     APIClientResourceDelete,
     APIClientKafkaDetails,
+    APIClientDSpacesDetails,
     APIClientSystemStatus,
     APIClientS3Buckets,
     APIClientS3Objects,

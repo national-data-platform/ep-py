@@ -10,6 +10,7 @@ from .api_client import APIClient
 from .client_base import APIClientBase
 from .delete_organization_method import APIClientOrganizationDelete
 from .delete_resource_method import APIClientResourceDelete
+from .get_dspaces_details_method import APIClientDSpacesDetails
 from .get_kafka_details_method import APIClientKafkaDetails
 from .get_system_status_method import APIClientSystemStatus
 from .list_organization_method import APIClientOrganizationList
@@ -25,6 +26,23 @@ from .update_kafka_method import APIClientKafkaUpdate
 from .update_s3_method import APIClientS3Update
 from .update_url_method import APIClientURLUpdate
 
+# DataSpaces exports (available when dxspaces is installed)
+try:
+    from .dataspaces import (
+        DataSpacesClient,
+        TimeDirection,
+        StagingFailure,
+        DXSPACES_AVAILABLE,
+        query_array,
+    )
+except ImportError:
+    # dxspaces not installed, dataspaces functionality unavailable
+    DataSpacesClient = None
+    TimeDirection = None
+    StagingFailure = None
+    DXSPACES_AVAILABLE = False
+    query_array = None
+
 __version__ = "0.1.1"
 __description__ = "Python client library for NDP EP API"
 
@@ -32,6 +50,12 @@ __description__ = "Python client library for NDP EP API"
 __all__ = [
     "APIClient",
     "APIClientBase",
+    "APIClientDSpacesDetails",
+    "DataSpacesClient",
+    "TimeDirection",
+    "StagingFailure",
+    "DXSPACES_AVAILABLE",
+    "query_array",
     "__version__",
     "__description__",
 ]
